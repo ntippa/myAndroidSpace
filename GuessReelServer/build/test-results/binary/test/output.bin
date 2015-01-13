@@ -1,0 +1,25 @@
+,---> HTTP POST http://localhost:8080/video
+/Content-Type: application/json; charset=UTF-8
+Content-Length: 154
+œ{"id":0,"name":"Video-e1a5e47e-4feb-42b8-bba4-2d08687c0d33","url":"http://coursera.org/some/video-e1a5e47e-4feb-42b8-bba4-2d08687c0d33","duration":180000}
+---> END HTTP (154-byte body)
+3<--- HTTP 201 http://localhost:8080/video (421ms)
+: HTTP/1.1 201 Created
+Content-Length: 0
+)Location: http://localhost:8080/video/0
+$X-Application-Context: application
+!Server: Jetty(8.1.14.v20131031)
+
+
+<--- END HTTP (0-byte body)
++---> HTTP GET http://localhost:8080/video
+---> END HTTP (no body)
+3<--- HTTP 200 http://localhost:8080/video (183ms)
+: HTTP/1.1 200 OK
+Transfer-Encoding: chunked
+$Content-Type: application/hal+json
+$X-Application-Context: application
+!Server: Jetty(8.1.14.v20131031)
+
+×[{"name":"Video-e1a5e47e-4feb-42b8-bba4-2d08687c0d33","url":"http://coursera.org/some/video-e1a5e47e-4feb-42b8-bba4-2d08687c0d33","duration":180000,"links":[{"rel":"self","href":"http://localhost:8080/video/0"}]}]
+<--- END HTTP (213-byte body)
